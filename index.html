@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jorge & Eliza</title>
+
+    <style>
+        body{
+            margin:0;
+            font-family: Georgia, serif;
+            background:#f8f5f0;
+            text-align:center;
+            color:#333;
+        }
+
+        .hero{
+            height:100vh;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(
+                rgba(0,0,0,0.4),
+                rgba(0,0,0,0.4)
+            ),
+            url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc');
+            background-size:cover;
+            background-position:center;
+            color:white;
+        }
+
+        h1{
+            font-size:4rem;
+            margin:0;
+        }
+
+        h2{
+            font-weight:normal;
+        }
+
+        .section{
+            padding:60px 20px;
+        }
+
+        .countdown{
+            font-size:2rem;
+            margin-top:20px;
+        }
+
+        .btn{
+            display:inline-block;
+            padding:12px 25px;
+            background:#b58a56;
+            color:white;
+            text-decoration:none;
+            border-radius:30px;
+            margin-top:20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="hero">
+        <h1>Jorge & Eliza</h1>
+        <h2>Nos Casamos</h2>
+
+        <div id="countdown" class="countdown"></div>
+
+        <a class="btn" href="#evento">
+            Ver Detalles
+        </a>
+    </div>
+
+    <section class="section" id="evento">
+        <h2>Ceremonia</h2>
+
+        <p>
+            Sábado 15 de Agosto de 2026
+        </p>
+
+        <p>
+            15h00
+        </p>
+
+        <p>
+            Lugar por confirmar
+        </p>
+    </section>
+
+    <script>
+
+        const weddingDate = new Date("August 15, 2026 15:00:00");
+
+        function updateCountdown(){
+
+            const now = new Date();
+
+            const diff = weddingDate - now;
+
+            const days = Math.floor(diff / (1000*60*60*24));
+
+            document.getElementById("countdown").innerHTML =
+            days + " días para nuestro gran día";
+        }
+
+        updateCountdown();
+
+        setInterval(updateCountdown,1000);
+
+    </script>
+
+</body>
+</html>
