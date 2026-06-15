@@ -58,58 +58,180 @@
             margin-top:20px;
         }
     </style>
+  <link rel="stylesheet" href="style.css">  
 </head>
 
 <body>
 
-    <div class="hero">
+    <body>
+
+    <section class="hero">
         <h1>Jorge & Eliza</h1>
-        <h2>Nos Casamos</h2>
 
-        <div id="countdown" class="countdown"></div>
-
-        <a class="btn" href="#evento">
-            Ver Detalles
-        </a>
-    </div>
-
-    <section class="section" id="evento">
-        <h2>Ceremonia</h2>
-
-        <p>
-            Sábado 15 de Agosto de 2026
+        <p class="frase">
+            "Dos vidas, un mismo camino"
         </p>
 
-        <p>
-            15h00
+        <p class="fecha">
+            22 de agosto de 2026
         </p>
 
-        <p>
-            Lugar por confirmar
-        </p>
     </section>
 
-    <script>
+    <section class="countdown">
 
-        const weddingDate = new Date("August 15, 2026 15:00:00");
+    <h2>Faltan</h2>
 
-        function updateCountdown(){
+    <div id="contador">
+        Cargando...
+    </div>
 
-            const now = new Date();
+</section>
 
-            const diff = weddingDate - now;
+<section class="evento">
 
-            const days = Math.floor(diff / (1000*60*60*24));
+    <div class="tarjeta">
+        <h2>💒 Ceremonia</h2>
+        <p>Iglesia Matriz San Gabriel</p>
+        <p>16:00</p>
+    </div>
 
-            document.getElementById("countdown").innerHTML =
-            days + " días para nuestro gran día";
-        }
+    <div class="tarjeta">
+        <h2>🎉 Recepción</h2>
+        <p>Salón Del Barrio Santa Clara</p>
+        <p>18:00</p>
+    </div>
 
-        updateCountdown();
+</section>
 
-        setInterval(updateCountdown,1000);
+<section class="acciones">
 
-    </script>
+    <h2>Información Importante</h2>
 
+    <a href="https://maps.app.goo.gl/x3FdU4s6Ztkw1WmW8" target="_blank" class="boton">
+        📍 Cómo llegar
+    </a>
+
+    <a href="https://wa.me/593998251540" target="_blank" class="boton">
+        ✅ Confirmar asistencia
+    </a>
+
+</section>
+
+<section class="historia">
+
+    <h2>Nuestra Historia</h2>
+
+    <p>
+        Algunas historias comienzan por casualidad,
+        otras parecen estar escritas desde siempre.
+    </p>
+
+    <p>
+        Entre sonrisas, conversaciones y sueños compartidos,
+        encontramos el amor que hoy nos une.
+    </p>
+
+    <p>
+        Gracias por acompañarnos en este día tan especial.
+    </p>
+
+</section>
+
+
+<section class="timeline">
+
+    <h2>Nuestro Camino</h2>
+
+    <div class="evento-tiempo">
+        ❤️ Primer encuentro
+    </div>
+
+    <div class="evento-tiempo">
+        ✈️ Primer viaje juntos
+    </div>
+
+    <div class="evento-tiempo">
+        💍 Compromiso
+    </div>
+
+    <div class="evento-tiempo">
+        💒 Nuestra boda
+    </div>
+
+</section>
+
+<section class="galeria">
+
+    <h2>Nuestros Momentos</h2>
+
+    <div class="grid-galeria">
+
+        <img src="images/foto1.jpg" alt="Foto 1">
+        <img src="images/foto2.jpg" alt="Foto 2">
+        <img src="images/foto3.jpg" alt="Foto 3">
+        <img src="images/foto4.jpg" alt="Foto 4">
+        <img src="images/foto5.jpg" alt="Foto 5">
+        <img src="images/foto6.jpg" alt="Foto 6">
+
+    </div>
+
+</section>
+
+<section class="vestimenta">
+
+    <h2>👔 Código de Vestimenta</h2>
+
+    <p>
+        Formal Elegante
+    </p>
+
+    <p>
+        Queremos compartir con ustedes una noche especial,
+        por lo que agradecemos asistir con vestimenta formal.
+    </p>
+
+</section>
+
+
+<section class="regalos">
+
+    <h2>🎁 Regalos</h2>
+
+    <p>
+        Su presencia es el regalo más importante para nosotros.
+    </p>
+
+    <p>
+        Si desean tener un detalle adicional,
+        podrán encontrar información el día del evento.
+    </p>
+
+</section>
+
+<section class="mensaje-final">
+
+    <h2>Gracias</h2>
+
+    <p>
+        Gracias por formar parte de nuestra historia.
+    </p>
+
+    <p>
+        Su compañía hará de este día un recuerdo inolvidable.
+    </p>
+
+    <p>
+        Los esperamos con mucho cariño.
+    </p>
+
+    <h3>Jorge & Eliza</h3>
+
+</section>
+
+
+</body>
+    
+    <script src="script.js"></script>
 </body>
 </html>

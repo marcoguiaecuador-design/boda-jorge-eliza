@@ -1,0 +1,258 @@
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background-color: #f5f0ea;
+}
+
+.hero {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background-image:
+        linear-gradient(
+            rgba(0,0,0,0.4),
+            rgba(0,0,0,0.4)
+        ),
+        url("images/portada.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+.frase {
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.fecha {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+.countdown {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: white;
+}
+
+.countdown h2 {
+    font-size: 2.5rem;
+}
+
+#contador {
+    font-size: 2rem;
+    margin-top: 20px;
+    font-weight: bold;
+}
+.evento {
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    background-color: #f5f0ea;
+}
+
+.tarjeta {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 280px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.tarjeta h2 {
+    margin-top: 0;
+}
+.acciones {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: white;
+}
+
+.boton {
+    display: inline-block;
+
+    margin: 10px;
+    padding: 15px 30px;
+
+    background-color: #b89b72;
+
+    color: white;
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    transition: 0.3s;
+}
+
+.boton:hover {
+    transform: translateY(-3px);
+}
+.historia {
+    padding: 100px 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+.historia h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+.historia p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+.timeline {
+    padding: 80px 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.timeline h2 {
+    margin-bottom: 40px;
+}
+
+.evento-tiempo {
+    margin: 20px auto;
+    padding: 20px;
+
+    max-width: 400px;
+
+    background-color: #f5f0ea;
+
+    border-radius: 10px;
+}
+.galeria {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.galeria h2 {
+    margin-bottom: 40px;
+    font-size: 3rem;
+}
+
+.grid-galeria {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 20px;
+
+    max-width: 1200px;
+    margin: auto;
+}
+
+.grid-galeria img {
+
+    width: 100%;
+    height: 300px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    transition: 0.3s;
+}
+
+.grid-galeria img:hover {
+
+    transform: scale(1.03);
+
+}
+.vestimenta {
+
+    padding: 100px 20px;
+
+    background-color: white;
+
+    text-align: center;
+}
+
+.vestimenta h2 {
+
+    font-size: 3rem;
+}
+
+.vestimenta p {
+
+    font-size: 1.2rem;
+
+    max-width: 700px;
+
+    margin: 20px auto;
+
+    line-height: 1.8;
+}
+.regalos {
+
+    padding: 100px 20px;
+
+    background-color: #f5f0ea;
+
+    text-align: center;
+}
+
+.regalos h2 {
+
+    font-size: 3rem;
+}
+
+.regalos p {
+
+    max-width: 700px;
+
+    margin: 20px auto;
+
+    line-height: 1.8;
+
+    font-size: 1.2rem;
+}
+.mensaje-final {
+
+    padding: 120px 20px;
+
+    text-align: center;
+
+    background-color: white;
+}
+
+.mensaje-final h2 {
+
+    font-size: 3rem;
+}
+
+.mensaje-final p {
+
+    font-size: 1.2rem;
+
+    line-height: 1.8;
+}
+
+.mensaje-final h3 {
+
+    margin-top: 40px;
+
+    font-size: 2rem;
+}
