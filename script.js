@@ -21,58 +21,47 @@ function actualizarContador() {
 window.setInterval(actualizarContador, 1000);
 actualizarContador();
 
-const bienvenida = document.getElementById("bienvenida");
 const musica = document.getElementById("musica-boda");
-const entrarConMusica = document.getElementById("entrar-con-musica");
-const entrarSinMusica = document.getElementById("entrar-sin-musica");
 const controlMusica = document.getElementById("control-musica");
 const textoControlMusica = controlMusica.querySelector(".control-musica-texto");
 
-document.body.classList.add("bienvenida-abierta");
 musica.volume = 0.35;
 
 function actualizarControlMusica() {
-    const reproduciendo = !musica.paused;
+    const reproduciendo = !musica.paused && !musica.muted;
     controlMusica.classList.toggle("reproduciendo", reproduciendo);
     controlMusica.setAttribute("aria-pressed", String(reproduciendo));
-    controlMusica.setAttribute("aria-label", reproduciendo ? "Pausar música" : "Reproducir música");
-    textoControlMusica.textContent = reproduciendo ? "Pausar" : "Música";
+    controlMusica.setAttribute("aria-label", reproduciendo ? "Silenciar música" : "Activar música");
+    textoControlMusica.textContent = reproduciendo ? "Silenciar" : "Música";
 }
 
-function cerrarBienvenida() {
-    bienvenida.classList.add("cerrando");
-    document.body.classList.remove("bienvenida-abierta");
-    controlMusica.hidden = false;
-    window.setTimeout(() => bienvenida.remove(), 750);
-}
-
-entrarConMusica.addEventListener("click", async () => {
-    cerrarBienvenida();
+async function iniciarMusica() {
     try {
         await musica.play();
     } catch (error) {
-        console.info("El navegador no permitió iniciar el audio.", error);
+        // Algunos navegadores esperan la primera interacción del visitante.
     }
     actualizarControlMusica();
-});
-
-entrarSinMusica.addEventListener("click", () => {
-    cerrarBienvenida();
-    actualizarControlMusica();
-});
+}
 
 controlMusica.addEventListener("click", async () => {
     if (musica.paused) {
-        try {
-            await musica.play();
-        } catch (error) {
-            console.info("No fue posible reproducir el audio.", error);
-        }
+        musica.muted = false;
+        await iniciarMusica();
     } else {
-        musica.pause();
+        musica.muted = !musica.muted;
     }
     actualizarControlMusica();
 });
 
+document.addEventListener("pointerdown", (evento) => {
+    if (musica.paused && !evento.target.closest("#control-musica")) {
+        iniciarMusica();
+    }
+}, { once: true });
+
 musica.addEventListener("play", actualizarControlMusica);
 musica.addEventListener("pause", actualizarControlMusica);
+musica.addEventListener("volumechange", actualizarControlMusica);
+
+iniciarMusica();

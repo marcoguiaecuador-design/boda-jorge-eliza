@@ -4,17 +4,6 @@ body {
     background-color: #f5f0ea;
 }
 
-body.bienvenida-abierta { overflow: hidden; }
-.bienvenida { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 24px; box-sizing: border-box; background: linear-gradient(rgba(36,27,20,.62), rgba(36,27,20,.72)), url("images/portada.jpg") center top / cover no-repeat; color: white; transition: opacity .7s ease, visibility .7s ease; }
-.bienvenida.cerrando { opacity: 0; visibility: hidden; }
-.bienvenida-contenido { width: min(620px, 100%); padding: clamp(32px, 7vw, 60px); box-sizing: border-box; border: 1px solid rgba(255,255,255,.45); border-radius: 24px; background: rgba(31,24,19,.56); box-shadow: 0 20px 70px rgba(0,0,0,.32); text-align: center; backdrop-filter: blur(7px); }
-.bienvenida-etiqueta { margin: 0 0 12px; text-transform: uppercase; letter-spacing: .3em; font-size: .78rem; }
-.bienvenida h2 { margin: 0 0 18px; font-size: clamp(2.2rem, 7vw, 4rem); line-height: 1.05; }
-.bienvenida-contenido > p:not(.bienvenida-etiqueta) { font-size: 1.08rem; line-height: 1.6; }
-.bienvenida-acciones { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
-.bienvenida .boton { margin: 0; border: 0; cursor: pointer; font: inherit; }
-.boton-musica { background: #b89b72; }
-.boton-sin-musica { color: white; background: transparent; box-shadow: inset 0 0 0 1px rgba(255,255,255,.75); }
 .control-musica { position: fixed; right: 18px; bottom: 18px; z-index: 900; display: flex; align-items: center; gap: 9px; padding: 11px 16px; border: 0; border-radius: 999px; color: white; background: rgba(82,63,47,.92); box-shadow: 0 6px 22px rgba(0,0,0,.24); cursor: pointer; font: 600 .9rem Georgia, serif; transition: transform .25s ease; }
 .control-musica:hover { transform: translateY(-2px); }
 .control-musica.reproduciendo .control-musica-icono { animation: pulso-musical 1.4s ease-in-out infinite; }
@@ -234,9 +223,6 @@ body.bienvenida-abierta { overflow: hidden; }
         height: 700px;
     }
 
-    .bienvenida { padding: 16px; }
-    .bienvenida-acciones { flex-direction: column; }
-    .bienvenida .boton { width: 100%; box-sizing: border-box; }
     .control-musica { right: 12px; bottom: 12px; }
 }
 .historia {

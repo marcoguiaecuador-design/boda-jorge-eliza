@@ -7,23 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="bienvenida" id="bienvenida" role="dialog" aria-modal="true" aria-labelledby="bienvenida-titulo">
-        <div class="bienvenida-contenido">
-            <p class="bienvenida-etiqueta">Nuestra boda</p>
-            <h2 id="bienvenida-titulo">Jorge Luis &amp; Elizabeth Teresa</h2>
-            <p>Nos hace mucha ilusión compartir este momento contigo.</p>
-            <div class="bienvenida-acciones">
-                <button class="boton boton-musica" id="entrar-con-musica" type="button">♫ Ingresar con música</button>
-                <button class="boton boton-sin-musica" id="entrar-sin-musica" type="button">Ingresar sin música</button>
-            </div>
-        </div>
-    </div>
-
-    <audio id="musica-boda" preload="metadata" loop>
+    <audio id="musica-boda" preload="metadata" autoplay loop>
         <source src="audio/musica-boda.mp3" type="audio/mpeg">
     </audio>
 
-    <button class="control-musica" id="control-musica" type="button" aria-label="Reproducir música" aria-pressed="false" hidden>
+    <button class="control-musica" id="control-musica" type="button" aria-label="Activar música" aria-pressed="false">
         <span class="control-musica-icono" aria-hidden="true">♫</span>
         <span class="control-musica-texto">Música</span>
     </button>
