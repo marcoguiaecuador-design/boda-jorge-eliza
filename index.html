@@ -3,290 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boda de Jorge Luis & Elizabeth Teresa</title>
-
-    <style>
-        body{
-            margin:0;
-            font-family: Georgia, serif;
-            background:#f8f5f0;
-            text-align:center;
-            color:#333;
-        }
-
-        .hero{
-            height:100vh;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            background:linear-gradient(
-                rgba(0,0,0,0.4),
-                rgba(0,0,0,0.4)
-            ),
-            url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc');
-            background-size:cover;
-            background-position:center;
-            color:white;
-        }
-
-        h1{
-            font-size:4rem;
-            margin:0;
-        }
-
-        h2{
-            font-weight:normal;
-        }
-
-        .section{
-            padding:60px 20px;
-        }
-
-        .countdown{
-            font-size:2rem;
-            margin-top:20px;
-        }
-
-        .btn{
-            display:inline-block;
-            padding:12px 25px;
-            background:#b58a56;
-            color:white;
-            text-decoration:none;
-            border-radius:30px;
-            margin-top:20px;
-        }
-    </style>
-  <link rel="stylesheet" href="style.css">  
+    <title>Boda de Jorge Luis &amp; Elizabeth Teresa</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <div class="bienvenida" id="bienvenida" role="dialog" aria-modal="true" aria-labelledby="bienvenida-titulo">
+        <div class="bienvenida-contenido">
+            <p class="bienvenida-etiqueta">Nuestra boda</p>
+            <h2 id="bienvenida-titulo">Jorge Luis &amp; Elizabeth Teresa</h2>
+            <p>Nos hace mucha ilusión compartir este momento contigo.</p>
+            <div class="bienvenida-acciones">
+                <button class="boton boton-musica" id="entrar-con-musica" type="button">♫ Ingresar con música</button>
+                <button class="boton boton-sin-musica" id="entrar-sin-musica" type="button">Ingresar sin música</button>
+            </div>
+        </div>
+    </div>
 
-       <section class="hero">
-        <h1>Jorge Luis & Elizabeth Teresa</h1>
+    <audio id="musica-boda" preload="metadata" loop>
+        <source src="audio/musica-boda.mp3" type="audio/mpeg">
+    </audio>
 
-        <p class="frase">
-            "Dos vidas, un mismo camino"
-        </p>
+    <button class="control-musica" id="control-musica" type="button" aria-label="Reproducir música" aria-pressed="false" hidden>
+        <span class="control-musica-icono" aria-hidden="true">♫</span>
+        <span class="control-musica-texto">Música</span>
+    </button>
 
-        <p class="fecha">
-            22 de agosto de 2026
-        </p>
-
+    <section class="hero">
+        <h1>Jorge Luis &amp; Elizabeth Teresa</h1>
+        <p class="frase">“Dos vidas, un mismo camino”</p>
+        <p class="fecha">22 de agosto de 2026</p>
     </section>
 
     <section class="countdown">
+        <h2>Faltan</h2>
+        <div id="contador">Cargando...</div>
+    </section>
 
-    <h2>Faltan</h2>
+    <section class="evento">
+        <article class="tarjeta tarjeta-lugar">
+            <h2>💒 Ceremonia</h2>
+            <p>Iglesia Matriz de San Gabriel</p>
+            <p class="hora-evento">17:45</p>
+            <p>Calles Simón Bolívar y García Moreno<br>San Gabriel - Carchi</p>
+            <div class="mapa-contenedor">
+                <iframe src="https://www.google.com/maps?q=0.5974227,-77.8344259&amp;z=17&amp;output=embed" title="Mapa de la Iglesia Matriz de San Gabriel" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="botones-mapa">
+                <a href="https://www.google.com/maps/dir/?api=1&amp;destination=0.5974227,-77.8344259" target="_blank" rel="noopener noreferrer" class="boton">📍 Cómo llegar</a>
+                <a href="https://maps.app.goo.gl/e9whdcf1TSHpQHzD9" target="_blank" rel="noopener noreferrer" class="boton boton-secundario">Google Maps</a>
+                <a href="https://waze.com/ul?ll=0.5974227%2C-77.8344259&amp;navigate=yes" target="_blank" rel="noopener noreferrer" class="boton boton-waze">Waze</a>
+            </div>
+        </article>
 
-    <div id="contador">
-        Cargando...
-    </div>
+        <article class="tarjeta tarjeta-lugar">
+            <h2>🎉 Recepción</h2>
+            <p>Salón de Actos del Barrio Santa Clara</p>
+            <p class="hora-evento">19:00</p>
+            <p>Calles Los Andes y Ulpiano Rosero</p>
+            <div class="mapa-contenedor">
+                <iframe src="https://www.google.com/maps?q=0.6009455,-77.8346416&amp;z=18&amp;output=embed" title="Mapa del Salón de Actos del Barrio Santa Clara" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="botones-mapa">
+                <a href="https://www.google.com/maps/dir/?api=1&amp;destination=0.6009455,-77.8346416" target="_blank" rel="noopener noreferrer" class="boton">📍 Cómo llegar</a>
+                <a href="https://maps.app.goo.gl/mL8K5iamKrCmPYKj9" target="_blank" rel="noopener noreferrer" class="boton boton-secundario">Google Maps</a>
+                <a href="https://waze.com/ul?ll=0.6009455%2C-77.8346416&amp;navigate=yes" target="_blank" rel="noopener noreferrer" class="boton boton-waze">Waze</a>
+            </div>
+        </article>
+    </section>
 
-</section>
-
-<section class="evento">
-
-    <article class="tarjeta tarjeta-lugar">
-        <h2>💒 Ceremonia</h2>
-        <p>Iglesia Matriz de San Gabriel</p>
-        <p class="hora-evento">17:45</p>
-        <p>Calles Simón Bolívar y García Moreno<br>San Gabriel - Carchi</p>
-
-        <div class="mapa-contenedor">
-            <iframe
-                src="https://www.google.com/maps?q=0.5974227,-77.8344259&z=17&output=embed"
-                title="Mapa de la Iglesia Matriz de San Gabriel"
-                loading="lazy"
-                allowfullscreen
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+    <section class="acciones rsvp" id="confirmar-asistencia">
+        <h2>Confirma tu asistencia</h2>
+        <p>Nos encantará compartir este día contigo.</p>
+        <p>Por favor, confirma tu asistencia hasta el 15 de agosto de 2026.</p>
+        <div class="formulario-contenedor">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdkjUq9tNlxYyzQVL0zYNOMnK10Pqu41siTX5BXXe3nfIPQ6g/viewform?embedded=true" title="Formulario de confirmación de asistencia" loading="lazy">Cargando formulario…</iframe>
         </div>
+        <p class="ayuda-formulario">¿No puedes ver el formulario?</p>
+        <a href="https://forms.gle/dgAtsLPuFUXTcpUW6" target="_blank" rel="noopener noreferrer" class="boton">Abrir formulario en una nueva ventana</a>
+    </section>
 
-        <div class="botones-mapa">
-            <a href="https://www.google.com/maps/dir/?api=1&destination=0.5974227,-77.8344259" target="_blank" rel="noopener noreferrer" class="boton">📍 Cómo llegar</a>
-            <a href="https://maps.app.goo.gl/e9whdcf1TSHpQHzD9" target="_blank" rel="noopener noreferrer" class="boton boton-secundario">Google Maps</a>
-            <a href="https://waze.com/ul?ll=0.5974227%2C-77.8344259&navigate=yes" target="_blank" rel="noopener noreferrer" class="boton boton-waze">Waze</a>
+    <section class="galeria">
+        <h2>Nuestros Momentos</h2>
+        <div class="grid-galeria">
+            <img src="images/foto1.jpg" alt="Jorge Luis y Elizabeth Teresa, recuerdo 1" loading="lazy">
+            <img src="images/foto2.jpg" alt="Jorge Luis y Elizabeth Teresa, recuerdo 2" loading="lazy">
+            <img src="images/foto3.jpg" alt="Jorge Luis y Elizabeth Teresa, recuerdo 3" loading="lazy">
+            <img src="images/foto4.jpg" alt="Jorge Luis y Elizabeth Teresa, recuerdo 4" loading="lazy">
+            <img src="images/foto5.jpg" alt="Jorge Luis y Elizabeth Teresa, recuerdo 5" loading="lazy">
+            <img src="images/foto6.jpg" alt="Jorge Luis y Elizabeth Teresa, recuerdo 6" loading="lazy">
         </div>
-    </article>
+    </section>
 
-    <article class="tarjeta tarjeta-lugar">
-        <h2>🎉 Recepción</h2>
-        <p>Salón de Actos del Barrio Santa Clara</p>
-        <p class="hora-evento">19:00</p>
-        <p>Calles Los Andes y Ulpiano Rosero</p>
+    <section class="vestimenta">
+        <h2>👔 Código de Vestimenta</h2>
+        <p>Formal</p>
+        <p>Queremos compartir con ustedes una noche especial, por lo que agradecemos asistir con vestimenta formal.</p>
+    </section>
 
-        <div class="mapa-contenedor">
-            <iframe
-                src="https://www.google.com/maps?q=0.6009455,-77.8346416&z=18&output=embed"
-                title="Mapa del Salón de Eventos Santa Clara"
-                loading="lazy"
-                allowfullscreen
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        </div>
+    <section class="familias">
+        <h2>Con la bendición de nuestros padres</h2>
+        <p><strong>Padres del novio</strong><br>María Isabel Acosta Pusdá<br>Luis Aníbal Chulde Villota</p>
+        <p><strong>Padres de la novia</strong><br>Teresa del Pilar Maldonado Quimis (†)<br>Luis Aurelio Cando Aguirre</p>
+    </section>
 
-        <div class="botones-mapa">
-            <a href="https://www.google.com/maps/dir/?api=1&destination=0.6009455,-77.8346416" target="_blank" rel="noopener noreferrer" class="boton">📍 Cómo llegar</a>
-            <a href="https://maps.app.goo.gl/mL8K5iamKrCmPYKj9" target="_blank" rel="noopener noreferrer" class="boton boton-secundario">Google Maps</a>
-            <a href="https://waze.com/ul?ll=0.6009455%2C-77.8346416&navigate=yes" target="_blank" rel="noopener noreferrer" class="boton boton-waze">Waze</a>
-        </div>
-    </article>
+    <section class="regalos">
+        <h2>🎁 Regalos</h2>
+        <p>Su presencia es el regalo más importante para nosotros.</p>
+        <p>Si desean tener un detalle adicional, podrán encontrar información el día del evento.</p>
+    </section>
 
-</section>
+    <section class="mensaje-final">
+        <h2>Gracias</h2>
+        <p>Gracias por formar parte de nuestra historia.</p>
+        <p>Su compañía hará de este día un recuerdo inolvidable.</p>
+        <p>Los esperamos con mucho cariño.</p>
+        <h3>Jorge Luis Chulde Acosta &amp; Elizabeth Teresa Cando Maldonado</h3>
+    </section>
 
-<section class="acciones rsvp" id="confirmar-asistencia">
-
-    <h2>Confirma tu asistencia</h2>
-
-    <p>Nos encantará compartir este día contigo.</p>
-    <p>Por favor, confirma tu asistencia hasta el 15 de agosto de 2026.</p>
-
-    <div class="formulario-contenedor">
-        <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSdkjUq9tNlxYyzQVL0zYNOMnK10Pqu41siTX5BXXe3nfIPQ6g/viewform?embedded=true"
-            title="Formulario de confirmación de asistencia"
-            loading="lazy">
-            Cargando formulario…
-        </iframe>
-    </div>
-
-    <p class="ayuda-formulario">¿No puedes ver el formulario?</p>
-    <a href="https://forms.gle/dgAtsLPuFUXTcpUW6" target="_blank" rel="noopener noreferrer" class="boton">
-        Abrir formulario en una nueva ventana
-    </a>
-
-</section>
-
-<section class="historia">
-
-    <h2>Nuestra Historia</h2>
-
-    <p>
-        Algunas historias comienzan por casualidad,
-        otras parecen estar escritas desde siempre.
-    </p>
-
-    <p>
-        Entre sonrisas, conversaciones y sueños compartidos,
-        encontramos el amor que hoy nos une.
-    </p>
-
-    <p>
-        Gracias por acompañarnos en este día tan especial.
-    </p>
-
-</section>
-
-
-<section class="timeline">
-
-    <h2>Nuestro Camino</h2>
-
-    <div class="evento-tiempo">
-        ❤️ Primer encuentro
-    </div>
-
-    <div class="evento-tiempo">
-        ✈️ Primer viaje juntos
-    </div>
-
-    <div class="evento-tiempo">
-        💍 Compromiso
-    </div>
-
-    <div class="evento-tiempo">
-        💒 Nuestra boda
-    </div>
-
-</section>
-
-<section class="galeria">
-
-    <h2>Nuestros Momentos</h2>
-
-    <div class="grid-galeria">
-
-        <img src="images/foto1.jpg" alt="Foto 1">
-        <img src="images/foto2.jpg" alt="Foto 2">
-        <img src="images/foto3.jpg" alt="Foto 3">
-        <img src="images/foto4.jpg" alt="Foto 4">
-        <img src="images/foto5.jpg" alt="Foto 5">
-        <img src="images/foto6.jpg" alt="Foto 6">
-
-    </div>
-
-</section>
-
-<section class="vestimenta">
-
-    <h2>👔 Código de Vestimenta</h2>
-
-    <p>
-        Formal
-    </p>
-
-    <p>
-        Queremos compartir con ustedes una noche especial,
-        por lo que agradecemos asistir con vestimenta formal.
-    </p>
-
-</section>
-
-<section class="familias">
-
-    <h2>Con la bendición de nuestros padres</h2>
-
-    <p><strong>Padres del novio</strong><br>
-        María Isabel Acosta Pusdá<br>
-        Luis Aníbal Chulde Villota
-    </p>
-
-    <p><strong>Padres de la novia</strong><br>
-        Teresa del Pilar Maldonado Quimis (†)<br>
-        Luis Aurelio Cando Aguirre
-    </p>
-
-</section>
-
-
-<section class="regalos">
-
-    <h2>🎁 Regalos</h2>
-
-    <p>
-        Su presencia es el regalo más importante para nosotros.
-    </p>
-
-    <p>
-        Si desean tener un detalle adicional,
-        podrán encontrar información el día del evento.
-    </p>
-
-</section>
-
-<section class="mensaje-final">
-
-    <h2>Gracias</h2>
-
-    <p>
-        Gracias por formar parte de nuestra historia.
-    </p>
-
-    <p>
-        Su compañía hará de este día un recuerdo inolvidable.
-    </p>
-
-    <p>
-        Los esperamos con mucho cariño.
-    </p>
-
-    <h3>Jorge Luis Chulde Acosta & Elizabeth Teresa Cando Maldonado</h3>
-
-</section>
-
-    
     <script src="script.js"></script>
 </body>
 </html>
