@@ -22,7 +22,7 @@ body {
         url("images/portada.jpg");
 
     background-size: cover;
-    background-position: center;
+    background-position: center top;
 
     color: white;
 }
