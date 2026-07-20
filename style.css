@@ -70,7 +70,8 @@ body {
     background-color: white;
     padding: 30px;
     border-radius: 15px;
-    width: 280px;
+    width: min(520px, 100%);
+    box-sizing: border-box;
 
     text-align: center;
 
@@ -79,6 +80,47 @@ body {
 
 .tarjeta h2 {
     margin-top: 0;
+}
+
+.hora-evento {
+    color: #9a744b;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.mapa-contenedor {
+    margin-top: 25px;
+    overflow: hidden;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+}
+
+.mapa-contenedor iframe {
+    display: block;
+    width: 100%;
+    height: 320px;
+    border: 0;
+}
+
+.botones-mapa {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.botones-mapa .boton {
+    margin: 0;
+    padding: 12px 18px;
+}
+
+.boton-secundario {
+    background-color: #6f7f69;
+}
+
+.boton-waze {
+    background-color: #4c8f9f;
 }
 .acciones {
     padding: 80px 20px;
@@ -104,6 +146,76 @@ body {
 
 .boton:hover {
     transform: translateY(-3px);
+}
+
+.rsvp > p {
+    font-size: 1.1rem;
+}
+
+.formulario-contenedor {
+    max-width: 760px;
+    margin: 35px auto 20px;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #f5f0ea;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.formulario-contenedor iframe {
+    display: block;
+    width: 100%;
+    height: 760px;
+    border: 0;
+}
+
+.ayuda-formulario {
+    margin-top: 25px;
+    margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+    .hero h1 {
+        font-size: clamp(2.5rem, 13vw, 4rem);
+        line-height: 1.05;
+        padding: 0 16px;
+    }
+
+    .evento,
+    .acciones,
+    .historia,
+    .timeline,
+    .galeria,
+    .vestimenta,
+    .regalos,
+    .mensaje-final {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .tarjeta {
+        padding: 22px 16px;
+    }
+
+    .mapa-contenedor iframe {
+        height: 280px;
+    }
+
+    .botones-mapa {
+        flex-direction: column;
+    }
+
+    .botones-mapa .boton {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .formulario-contenedor {
+        border-radius: 12px;
+    }
+
+    .formulario-contenedor iframe {
+        height: 700px;
+    }
 }
 .historia {
     padding: 100px 20px;
