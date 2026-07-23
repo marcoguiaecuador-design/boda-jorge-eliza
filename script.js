@@ -1,4 +1,4 @@
-const fechaBoda = new Date("2026-08-22T17:45:00-05:00").getTime();
+const fechaBoda = new Date("2026-08-22T15:45:00-05:00").getTime();
 
 function actualizarContador() {
     const ahora = Date.now();

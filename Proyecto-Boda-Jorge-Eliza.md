@@ -56,7 +56,7 @@ mediante **GitHub Pages**.
 
 ### Ceremonia
 
-**17:45**
+**15:45**
 
 **Iglesia Matriz de San Gabriel**
 
@@ -66,7 +66,7 @@ San Gabriel - Carchi
 
 ### Recepción
 
-**19:00**
+**17:30**
 
 Salón de Actos del Barrio Santa Clara
 
