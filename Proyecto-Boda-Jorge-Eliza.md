@@ -25,7 +25,9 @@ mediante **GitHub Pages**.
         ├── foto3.jpg
         ├── foto4.jpg
         ├── foto5.jpg
-        └── foto6.jpg
+        ├── foto6.jpg
+        ├── iglesia-matriz-san-gabriel.jpg
+        └── salon-santa-clara.jpg
 
 ## Funcionalidades implementadas
 
@@ -33,6 +35,7 @@ mediante **GitHub Pages**.
 -   Cuenta regresiva en tiempo real
 -   Ceremonia
 -   Recepción
+-   Fotografías de los lugares junto a sus mapas
 -   Información importante
 -   Galería con efecto hover
 -   Nuestra historia
